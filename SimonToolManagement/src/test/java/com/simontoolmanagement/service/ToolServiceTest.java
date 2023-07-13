@@ -72,6 +72,10 @@ public class ToolServiceTest {
         double expected = 2.99;
         assertEquals(expected, rentalAgreement.preDiscountCharge(), DELTA);
         assertEquals(expected - (expected * .5), rentalAgreement.finalCharge(), DELTA);
+        assertEquals("Tool code: JAKR\n" + "Tool type: Jackhammer\n" + "Tool brand: Ridgid\n" + "Rental days: 4\n"
+        + "Check out date: 07/02/20\n" + "Due date: 07/06/20\n" + "Daily rental charge: $2.99\n"
+        + "Charge days: 1\n" + "Pre-discount charge: $2.99\n" + "Discount percent: 50%\n"
+        + "Discount amount: $1.50\n" + "Final charge: $1.50\n", rentalAgreement.generateReceipt());
     }
 
 }
